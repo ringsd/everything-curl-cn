@@ -1,12 +1,7 @@
-# Open Source
+# 开源代码
 
-## What is Open Source
+## 什么是开源代码
 
-Generally, Open Source software is software that can be freely accessed, used,
-changed, and shared (in modified or unmodified form) by anyone. Open Source
-software is typically made by many people, and distributed under licenses that
-comply with the definition.
+通常，开源软件是任何人都可以自由访问、使用、更改和共享（以修改或未修改的形式）的软件。开源软件通常由许多人制作，并根据符合定义的许可证分发。
 
-Free Software is an older and related term that mostly says the same thing for
-all our intents and purposes, but we stick to the term Open Source in this
-document for simplicity.
+自由软件是一个古老而相关的术语，对于我们所有的意图和目的来说，它大多都说同样的话，但为了简单起见，我们在本文档中坚持使用开源这个术语。

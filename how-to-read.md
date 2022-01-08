@@ -1,62 +1,45 @@
-# How to read this book
+# 怎样阅读本书
 
-Here is an overview of the main sections of this book and what they cover.
+以下是本书主要章节的概述以及它们所涵盖的内容。
 
-## 1. [The cURL project](project.md)
+## 1. [cURL 项目](project.md)
+关于 cURL 项目。它是如何开始的，我们是如何工作的，发布的频率是多少。
 
-Project things. How it started, how we work and how often releases are made.
+## 2. [获取 curl](get.md)
+从哪里获取和如何安装 curl。
 
-## 2. [Get curl](get.md)
+## 3. [开源代码](opensource.md)
+什么是开放源码以及它是如何工作的。
 
-How and where to get and install curl.
+## 4. [源码](source.md)
+对 curl 源代码的描述，以及代码的布局和工作方式。
 
-## 3. [Open Source](opensource.md)
+## 5. [网络和协议](protocols.md)
+网络和协议到底是什么？
 
-An attempt to explain what open source is and how it works.
+## 6. [命令行基础知识](cmdline.md)
+如何从零开始使用 curl 的命令行？
 
-## 4. [The source code](source.md)
+## 7. [使用 curl](usingcurl.md)
+深入理解使用 curl 命令行所做的事情。
 
-A description of the curl source tree and how the layout of the code is and
-works.
+## 8. [curl 中的 HTTP](http.md)
+深入研究使用 curl 命令行执行特定的 HTTP 操作。
 
-## 5. [Network and protocols](protocols.md)
+## 9. [curl 中的 FTP](ftp.md)
+在本章中学习FTP特定的操作。
 
-What exactly are networks and protocols?
+## 10. [使用 libcurl](libcurl.md)
+libcurl的工作原理以及在如何在自己的应用程序中使用它。
 
-## 6. [Command line basics](cmdline.md)
+## 11. [libcurl 中的 HTTP](libcurl-http.md)
+更详细地了解使用 libcurl 执行特定于 HTTP 的操作。
 
-Start at the beginning. How do you use curl from a command line?
+## 12. [libcurl 的接口](bindings.md)
+对一些流行的 libcurl 绑定以及它们与 libcurlcapi 的相似性进行了简单概述。
 
-## 7. [Using curl](usingcurl.md)
+## 13. [libcurl 内部构造](internals.md)
+它是这样工作的…
 
-Going deeper, looking at things you do with curl the command line tool.
-
-## 8. [HTTP with curl](http.md)
-
-Digging deeper on HTTP specific actions to do with the curl command line tool.
-
-## 9. [FTP with curl](ftp.md)
-
-Learn FTP specific operations in this chapter.
-
-## 10. [Using libcurl](libcurl.md)
-
-How libcurl works and how you use it when writing your own applications with
-it.
-
-## 11. [HTTP with libcurl](libcurl-http.md)
-
-A closer look at doing HTTP specific things with libcurl.
-
-## 12. [Bindings for libcurl](bindings.md)
-
-A casual overview of some of the most popular libcurl bindings and how similar
-they are to the libcurl C API.
-
-## 13. [libcurl internals](internals.md)
-
-Under the hood it works like this…
-
-## 14. [Index](bookindex.md)
-
-The index.
+## 14. [索引](bookindex.md)
+索引
