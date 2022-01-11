@@ -1,32 +1,26 @@
-# Modify the request method
+# 修改请求方法(Method)
 
-The first line of an HTTP request includes the *method* - sometimes also
-referred to as the verb. When doing a simple GET request as this command line
-would do:
+HTTP 请求的第一行包括*方法* —— 有时也称为动词。一个简单 GET 请求，可以执行如下命令行：
 
     curl http://example.com/file
 
-…the initial request line looks like this:
+HTTP 请求如下所示：
 
     GET /file HTTP/1.1
 
-You can tell curl to change the method into something else by using the `-X`
-or `--request` command-line options followed by the actual method name. You
-can, for example, send a `DELETE` instead of `GET` like this:
+你可以使用 `-X` 或 `--request` 命令行来告诉 curl 将该方法更改为其他方法，参数后面跟实际的方法名称即可。
+例如，你可以用 `DELETE` 请求来替代 `GET` 请求，命令如下所示：
 
     curl http://example.com/file -X DELETE
 
-This command-line option only changes the text in the outgoing request, it
-does not change any behavior. This is particularly important if you, for
-example, ask curl to send a HEAD with `-X`, as HEAD is specified to send all
-the headers a GET response would get but *never* send a response body, even if
-the headers otherwise imply that one would come. So, adding `-X HEAD` to a
-command line that would otherwise do a GET will cause curl to hang, waiting
-for a response body that will not come.
+请求被修改为：
 
-When asking curl to perform HTTP transfers, it will pick the correct method
-based on the option so you should only rarely have to explicitly ask for
-it with `-X`. It should also be noted that when curl follows redirects like
-asked to with `-L`, the request method set with `-X` will be sent even on the
-subsequent redirects.
+    DELETE /file HTTP/1.1
 
+此命令行选项仅更改传出请求中的文本，不更改任何行为。
+这一点尤其重要，例如，如果你要求 curl 发送带有 `-X` 的 HEAD 请求，因为 HEAD 是类似于 GET 的请求，只不过返回的响应中*没有*具体的内容，主要用来用于获取报头。因此，将 `-X HEAD` 添加到本可以正常执行 GET 的命令里将导致 curl 被挂起，因为它会等待不会出现的响应体。
+
+
+当要求 curl 执行 HTTP 传输时，它将根据选项选择正确的方法，因此你应该很少需要使用 `-X` 来显式地要求。还应该注意的是，当在 curl 命令中使用 `-L` 重定向的时候，后续的请求也都会使用上 `-X` 设置的请求方法。
+
+[HTTP 请求参考]([versions.md](https://www.runoob.com/http/http-methods.html))。
