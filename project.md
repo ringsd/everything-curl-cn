@@ -1,9 +1,5 @@
-# The cURL project
+# cURL 项目
 
 ![curl logo](curl-logo.jpg)
 
-A funny detail about Open Source projects is that they are called "projects",
-as if they were somehow limited in time or ever can get done. The cURL
-"project" is a number of loosely coupled individual volunteers working on
-writing software together with a common mission: to do reliable data transfers
-with Internet protocols, as Open Source.
+关于开源项目的一个有趣的细节是，它们被称为“项目”，似乎它们在时间上受到了某种限制，或者永远无法完成。cURL “项目” 是由一些松散耦合的个体志愿者开发的，他们共同的任务是编写软件：以开放源代码的方式使用互联网协议进行可靠的数据传输。
