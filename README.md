@@ -15,20 +15,21 @@
 本书项目开始于 2015 年 9 月底。
 
 ## 本书站点
-[https://everything.curl.dev](https://everything.curl.dev) 是本书的主页，[https://everything.curl.dev](https://everything.curl.dev)是本书中文版的主页。它提供了直接访问的连接，你可以在线阅读本书，也可以下载 PDF 版本离线阅读。不幸的是，gitbook.com 不再提供以前的电子书格式，我们没办法通过 gitbook.com 来制作本书的其他格式。
+[https://everything.curl.dev](https://everything.curl.dev) 是本书的主页。它提供了直接访问的连接，你可以在线阅读本书，也可以下载 PDF 版本离线阅读。不幸的是，gitbook.com 不再提供以前的电子书格式，我们没办法通过 gitbook.com 来制作本书的其他格式。
 
 [https://github.com/bagder/everything-curl](https://github.com/bagder/everything-curl)托管了本书所有内容。
 
+[https://github.com/ringsd/everything-curl-cn](https://github.com/ringsd/everything-curl-cn)托管了本书中文版内容，中文版的内容会尽快同步本书原始站点内容，当前同步时间 2022 年 1 月 1 日。
+
 ## 作者
-我是 Daniel Stenberg，希望能成为本书的合著者。我创建了 curl 项目，本质上我开发这个项目是为了乐趣和利润??。我在瑞典的斯德哥尔摩生活和工作。
+我是 Daniel Stenberg，希望能成为本书的合著者。我创建了 curl 项目，本质上我开发这个项目是为了乐趣。我在瑞典的斯德哥尔摩生活和工作。
 
 所有关于我的信息都可以在[我的网站](https://daniel.haxx.se/)上找到。
 
 ## 帮助
 如果您发现了本书中的任何纰漏、遗漏、错误或公然的谎言，欢迎您将受影响章节的修正版本传给我们，我们将酌情修改。我们将为提供帮助的每个人给予适当的表彰。我们希望随着时间推移，这份文档越来越好。
 
-提交问题[errors](https://github.com/bagder/everything-curl/issues)或者拉取请求[pull
-requests](https://github.com/bagder/everything-curl/pulls)到本书的GitHub页面是最好的反馈方式。
+提交问题[Errors](https://github.com/bagder/everything-curl/issues)或者[发起 PR](https://github.com/bagder/everything-curl/pulls)到本书的GitHub页面是最好的反馈方式。
 
 ## 贡献者
 
@@ -96,3 +97,10 @@ Wieland Hoffmann,
 
 ## 许可协议
 本文档遵循 [知识共享署名 4.0 许可协议](https://creativecommons.org/licenses/by/4.0/) 。
+
+## 译者
+我是 Ringsd，一个希望通过翻译 curl 文档进一步学习网络知识的码农。
+
+本书的翻译主要通过翻译软件进行翻译，然后由我进行整理，如果其中有任何的翻译或者使用的问题，请先参考原始文档使用。如果有什么问题可以
+提交问题[Errors](https://github.com/ringsd/everything-curl-cn/issues)或者[发起 PR](https://github.com/ringsd/everything-curl-cn/pulls)。
+
