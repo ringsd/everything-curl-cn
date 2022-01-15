@@ -70,24 +70,22 @@ To make curl return an error for response codes >= 400, you need to use
 `--fail` or `--fail-with-body`. Then curl will exit with error code 22 for
 such occurrences.
 
-要使curl返回响应代码>=400的错误，需要使用“---fail”或“---fail with body”。然后curl将退出，错误代码为22。
+要使 curl 返回响应代码中 >=400 的错误，需要使用 `--fail` 或 `--fail-with-body`。这样出错了，curl 也会退出，错误代码为 22。
 
 ### CONNECT response codes
 
-### 连接响应代码
+### CONNECT 响应代码
 
 Since there can be an HTTP request and a separate CONNECT request in the same
 curl transfer, we often separate the CONNECT response (from the proxy) from
 the remote server's HTTP response.
 
-因为在同一个curl传输中可以有一个HTTP请求和一个单独的CONNECT请求，所以我们通常将CONNECT响应（来自代理）与远程服务器的HTTP响应分开。
- 
+因为在同一个 curl 传输中可以有一个 HTTP 请求和一个单独的 CONNECT 请求，所以我们通常将 CONNECT 响应（来自代理）与远程服务器的 HTTP 响应分开。
 
 The CONNECT is also an HTTP request so it gets response codes in the same
 numeric range and you can use `--write-out` to extract that code as well.
 
-CONNECT也是一个HTTP请求，因此它获取相同数字范围内的响应代码，您也可以使用“---write out”提取该代码。
- 
+CONNECT 也是一个 HTTP 请求，因此它获取相同数字范围内的响应代码，你也可以使用 `--write-out` 提取该代码。
 
 ### Chunked transfer encoding
 
@@ -96,7 +94,7 @@ CONNECT也是一个HTTP请求，因此它获取相同数字范围内的响应代
 An HTTP 1.1 server can decide to respond with a "chunked" encoded response, a
 feature that was not present in HTTP 1.0.
 
-HTTP 1.1服务器可以决定使用“分块”编码的响应进行响应，这是HTTP 1.0中不存在的特性。
+HTTP 1.1 服务器开始可以决定是否使用分块（`chunked`）编码的方式来进行响应，HTTP 1.0 中没有该特性。
 
 When receiving a chunked response, there is no Content-Length: for the response
 to indicate its size. Instead, there is a `Transfer-Encoding: chunked` header
@@ -110,7 +108,7 @@ response has ended even though the server did not know the full size before
 it started to send it. This is usually the case when the response is dynamic
 and generated at the point when the request comes.
 
-当接收分块响应时，没有内容长度：用于指示响应大小。相反，有一个“Transfer Encoding:chunked”头，告诉curl有分块数据出现，然后在响应体中，数据以一系列“chunks”的形式出现。每个块都以该块的大小（十六进制）开始，然后是换行符，然后是块的内容。这会一次又一次地重复，直到响应结束，并用一个大小为零的块发出信号。这种响应编码的目的是让客户机能够知道响应何时结束，即使服务器在开始发送之前不知道响应的完整大小。当响应是动态的并且在请求到来时生成时，通常就是这种情况。
+当接收分块响应时，没有 `Content-Length` ：用于指示响应大小。相反，有一个 `Transfer-Encoding: chunked` 头，告诉 curl 有分块数据出现，然后在响应体中，数据以一系列分块的形式出现。每个块都以该块的大小（十六进制）开始，然后是换行符，然后是块的内容。这会一次又一次地重复，直到响应结束，并用一个大小为零的块发出信号。这种响应编码的目的是让客户机能够知道响应何时结束，即使服务器在开始发送之前不知道响应的完整大小。当响应是动态的并且在请求到来时生成时，通常就是这种情况。
 
 Clients like curl will, of course, decode the chunks and not show the chunk
 sizes to users.
