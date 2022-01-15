@@ -1,5 +1,5 @@
-* [怎样阅读本书](how-to-read.md)
-* [cURL 项目](project.md)
+* [怎样阅读本书](how-to-read.md)_
+* [cURL 项目](project.md)_
     * [How it started](project/started.md)
     * [The name](project/name.md)
     * [What does curl do?](project/does.md)
@@ -19,7 +19,7 @@
         * [MSYS2](get/win-msys2.md)
         * [vcpkg](get/win-vcpkg.md)
     * [macOS](get/macos.md)
-* [Open Source](opensource.md)
+* [开源代码](opensource.md)_
     * [License](opensource/license.md)
     * [Copyright and Legal](opensource/copyright.md)
     * [Code of Conduct](opensource/coc.md)<
@@ -123,12 +123,12 @@
         * [TLS back-ends](usingcurl/tls/backends.md)
         * [SSLKEYLOGFILE](usingcurl/tls/sslkeylogfile.md)
     * [Copy as curl](usingcurl/copyas.md)
-* [curl 中的 HTTP](http.md)
-    * [协议基础](http/basics.md)
-    * [响应](http/response.md)
-    * [Authentication](http/auth.md)
+* [curl 中的 HTTP](http.md)_
+    * [协议基础](http/basics.md)_
+    * [响应](http/response.md)_
+    * [验证](http/auth.md)_
     * [Ranges](http/ranges.md)
-    * [HTTP versions](http/versions.md)
+    * [HTTP版本](http/versions.md)_
     * [Conditionals](http/conditionals.md)
     * [HTTPS](http/https.md)
     * [HTTP POST](http/post.md)
@@ -145,13 +145,13 @@
     * [Multipart formposts](http/multipart.md)
     * [-d vs -F](http/postvspost.md)
     * [Redirects](http/redirects.md)
-    * [Modify the HTTP request](http/requests.md)
-        * [Request method](http/modify/method.md)
-        * [Request target](http/modify/target.md)
-        * [Fragment](http/modify/fragment.md)
-        * [Customize headers](http/modify/headers.md)
-        * [Referer](http/modify/referer.md)
-        * [User-agent](http/modify/user-agent.md)
+    * [修改 HTTP 请求](http/requests.md)_
+        * [请求方法(Method)](http/modify/method.md)_
+        * [请求目标(Target)](http/modify/target.md)_
+        * [片段(Fragment)](http/modify/fragment.md)_
+        * [自定义头(Header)](http/modify/headers.md)_
+        * [来源(Referer)](http/modify/referer.md)_
+        * [用户代理(User-agent)](http/modify/user-agent.md)_
     * [HTTP PUT](http/put.md)
     * [Cookies](http/cookies.md)
     * [HTTP/2](http/http2.md)

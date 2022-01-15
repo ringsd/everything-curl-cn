@@ -94,10 +94,9 @@ CONNECT 也是一个 HTTP 请求，因此它获取相同数字范围内的响应
 An HTTP 1.1 server can decide to respond with a "chunked" encoded response, a
 feature that was not present in HTTP 1.0.
 
-HTTP 1.1 服务器开始可以决定是否使用分块（`chunked`）编码的方式来进行响应，HTTP 1.0 中没有该特性。
+从 HTTP 1.1 开始服务器可以决定是否使用分块（`chunked`）编码的方式来进行响应，HTTP 1.0 中没有该特性。
 
 When receiving a chunked response, there is no Content-Length: for the response
-to indicate its size. Instead, there is a `Transfer-Encoding: chunked` header
 that tells curl there is chunked data coming and then in the response body, the
 data comes in a series of "chunks". Every individual chunk starts with the
 size of that particular chunk (in hexadecimal), then a newline and then the
@@ -108,16 +107,16 @@ response has ended even though the server did not know the full size before
 it started to send it. This is usually the case when the response is dynamic
 and generated at the point when the request comes.
 
-当接收分块响应时，没有 `Content-Length` ：用于指示响应大小。相反，有一个 `Transfer-Encoding: chunked` 头，告诉 curl 有分块数据出现，然后在响应体中，数据以一系列分块的形式出现。每个块都以该块的大小（十六进制）开始，然后是换行符，然后是块的内容。这会一次又一次地重复，直到响应结束，并用一个大小为零的块发出信号。这种响应编码的目的是让客户机能够知道响应何时结束，即使服务器在开始发送之前不知道响应的完整大小。当响应是动态的并且在请求到来时生成时，通常就是这种情况。
+当接收到分块响应时，没有 `Content-Length：` 来指示响应大小。相反，有一个 `Transfer-Encoding: chunked` 头，告诉 curl 有分块数据出现，然后在响应体中，数据将以一系列分块的形式出现。每个块都以该块的大小（十六进制）开始，然后是换行符，然后是块的内容。这种响应将会一直重复，并用一个大小为零的块作为结束的信号。采用这种编码方式即使服务器在开始发送之前不知道响应的完整大小，也可以让客户端知道响应什么时候结束。这个通常用来处理这样的情况，就是当请求来的时候，响应才动态生成。
 
 Clients like curl will, of course, decode the chunks and not show the chunk
 sizes to users.
 
-当然，像curl这样的客户端将解码块，而不会向用户显示块大小。
+当然，像 curl 这样的客户端将解码所有的块，而不会向用户去显示块大小。
 
 ### Gzipped transfers
 
-### Gzip传输
+### Gzip 传输
 
 Responses over HTTP can be sent in compressed format. This is most commonly
 done by the server when it includes a `Content-Encoding: gzip` in the response
@@ -126,14 +125,14 @@ static resources are sent (that were compressed previously) or even in
 run-time when there is more CPU power available than bandwidth. Sending a much
 smaller amount of data is often preferred.
 
-HTTP上的响应可以以压缩格式发送。当服务器在响应中包含一个“Content Encoding:gzip”作为对客户端的提示时，这通常由服务器完成。当发送静态资源（以前压缩过的资源）时，或者甚至在运行时，当可用CPU功率大于带宽时，压缩响应都很有意义。发送数量小得多的数据通常是首选。
+当服务器在响应中包含一个 `Content-Encoding: gzip` 响应头的时候，HTTP 响应数据将压缩格式发送。当发送静态资源（以前压缩过的资源）或者当可用 CPU 大于带宽时，压缩响应就比较有意义。因为通常来说更倾向于发送更小的数据（带宽需要更小）。
 
 You can ask curl to both ask for compressed content *and* automatically and
 transparently uncompress gzipped data when receiving content encoded gzip (or
 in fact any other compression algorithm that curl understands) by using
 `--compressed`:
 
-通过使用“---compressed”，您可以让curl在接收内容编码的gzip（或者实际上是curl理解的任何其他压缩算法）时，同时请求压缩内容*和*自动且透明地解压缩gzip数据：
+使用 `--compressed` 可以让 curl 请求压缩内容，并且自动且透明地解压缩 gzip 数据（或者其他 curl 支持的压缩算法）：
 
     curl --compressed http://example.com/
 
@@ -152,37 +151,36 @@ described in the section above. But HTTP was originally intended and specified
 to allow transparent compression as a transfer encoding, and curl supports
 this feature.
 
-压缩本身很常见。随着时间的推移，对HTTP进行压缩的主要且与web兼容的方式已变成使用上文所述的“内容编码”。但是HTTP最初的目的是允许透明压缩作为传输编码，并且curl支持这个特性。
+压缩本身很常见。随着时间的推移并且强化对 web 的兼容，对 HTTP 压缩的支持主要方式已经变成使用上文所述的 `Content-Encoding`。但是 HTTP 最开始就是支持透明压缩作为传输编码，而且 curl 也支持这个特性。
 
 The client then simply asks the server to do compression transfer encoding and
 if acceptable, it will respond with a header indicating that it will and curl
 will then transparently uncompress that data on arrival. A user enables asking
 for compressed transfer encoding with `--tr-encoding`:
 
-然后，客户机简单地要求服务器进行压缩传输编码，如果可以接受，它将用一个报头响应，表明它将这样做，然后curl将在数据到达时透明地解压缩该数据。用户可以通过“--tr encoding”请求压缩传输编码：
+然后，客户端可以很简单的要求服务器进行压缩传输，如果服务器接受，它将用一个报头响应，表明它将这样做，然后 curl 将在数据到达时透明地解压缩该数据。用户可以通过 `--tr-encoding` 请求压缩传输编码：
 
     curl --tr-encoding http://example.com/
 
 It should be noted that not many HTTP servers in the wild support this.
 
-应该注意的是，野外没有多少HTTP服务器支持这一点。
- 
+应该注意的是，并没有多少 HTTP 服务器支持这一点。 
 
 ### Pass on transfer encoding
 
-### 传递传递编码
+### 传递传输编码
 
 In some situations you may want to use curl as a proxy or other in-between
 software. In those cases, curl's way to deal with transfer-encoding headers
 and then decoding the actual data transparently may not be desired, if the end
 receiver *also* expects to do the same.
 
-在某些情况下，您可能希望使用curl作为代理或其他中间软件。在这些情况下，如果终端接收器*也*希望这样做，则可能不需要curl处理传输编码头然后透明地解码实际数据的方法。
+在某些情况下，您可能希望使用 curl 作为代理或其他中间软件。在这些情况下，如果最终接收端*也*希望这样做，则可能不需要 curl 处理传输编码然后解码实际数据。
 
 You can then ask curl to pass on the received data, without decoding it. That
 means passing on the sizes in the chunked encoding format or the compressed
 format when compressed transfer encoding is used etc.
 
-然后，您可以要求curl传递接收到的数据，而无需对其进行解码。这意味着在使用压缩传输编码时，以分块编码格式或压缩格式传递大小。
+然后，您可以要求 curl 传递接收到的数据，而无需对其进行解码。这意味着在使用压缩传输编码时，以分块编码格式或压缩格式传递。
 
     curl --raw http://example.com/
