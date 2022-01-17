@@ -127,11 +127,11 @@
     * [协议基础](http/basics.md)_
     * [响应](http/response.md)_
     * [验证](http/auth.md)_
-    * [Ranges](http/ranges.md)
+    * [范围](http/ranges.md)_
     * [HTTP版本](http/versions.md)_
-    * [Conditionals](http/conditionals.md)
-    * [HTTPS](http/https.md)
-    * [HTTP POST](http/post.md)
+    * [条件](http/conditionals.md)_
+    * [HTTPS](http/https.md)_
+    * [HTTP POST](http/post.md)_
         * [Simple POST](http/post/simple.md)
         * [Content-Type](http/post/content-type.md)
         * [Posting binary](http/post/binary.md)
