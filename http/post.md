@@ -19,7 +19,7 @@ This section describes the simple posts, for multipart formposts done with
 * [POST 二进制文件](post/binary.md)
 * [URL 编码](post/url-encode.md)
 * [转换为 GET](post/convert-to-get.md)
-* [期望 100-continue](post/expect100.md)
+* [Expect 100-continue](post/expect100.md)
 * [分块编码的 POST](post/chunked.md)
 * [隐藏的表单域](post/hiddenfields.md)
 * [弄清楚浏览器发送的内容](post/browsersends.md)

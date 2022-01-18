@@ -136,10 +136,10 @@
         * [内容类型(Content-Type)](http/post/content-type.md)
         * [POST 二进制文件](http/post/binary.md)_
         * [URL 编码](http/post/url-encode.md)_
-        * [Convert to GET](http/post/convert-to-get.md)
-        * [Expect 100-continue](http/post/expect100.md)
-        * [Chunked encoded POSTs](http/post/chunked.md)
-        * [Hidden form fields](http/post/hiddenfields.md)
+        * [转换为 GET](http/post/convert-to-get.md)_
+        * [Expect 100-continue](http/post/expect100.md)_
+        * [分块编码 POST](http/post/chunked.md)_
+        * [隐藏表单字段](http/post/hiddenfields.md)_
         * [Figure out what a browser sends](http/post/browsersends.md)
         * [JavaScript and forms](http/post/javascript.md)
     * [Multipart formposts](http/multipart.md)
