@@ -7,16 +7,16 @@ application, and it is how most common HTML forms on the web
 works. It usually sends a chunk of relatively small amounts of data to the
 receiver.
 
-POST 是用于将数据发送到接收 Web 应用程序的 HTTP 方法，它是最常见的 HTML 表单的工作方式。它通常将一块相对少量的数据发送到接收端。
+POST 是一个将数据发送给正在接收的 Web 应用程序的 HTTP 方法，它是应用在 HTML 表单中一种最常见方式。它通常将一块相对少量的数据发送到接收端。
 
 This section describes the simple posts, for multipart formposts done with
 `-F`, check out [Multipart formposts](multipart.md).
 
-本节介绍简单的 POST，关于使用 `-F` 参数的 multipart formposts，请查看 [Multipart formposts](multipart.md)。
+本节介绍简易的 POST 使用方法，关于 multipart formposts 请使用 `-F` 参数，详细请查看 [Multipart formposts](multipart.md)。
 
-* [简单 POST](post/simple.md)
-* [Content-Type](post/content-type.md)
-* [发布二进制文件](post/binary.md)
+* [简易 POST](post/simple.md)
+* [内容类型(Content-Type)](post/content-type.md)
+* [POST 二进制文件](post/binary.md)
 * [URL 编码](post/url-encode.md)
 * [转换为 GET](post/convert-to-get.md)
 * [期望 100-continue](post/expect100.md)

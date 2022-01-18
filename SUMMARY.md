@@ -132,10 +132,10 @@
     * [条件](http/conditionals.md)_
     * [HTTPS](http/https.md)_
     * [HTTP POST](http/post.md)_
-        * [Simple POST](http/post/simple.md)
-        * [Content-Type](http/post/content-type.md)
-        * [Posting binary](http/post/binary.md)
-        * [URL encoding](http/post/url-encode.md)
+        * [简易 POST](http/post/simple.md)_
+        * [内容类型(Content-Type)](http/post/content-type.md)
+        * [POST 二进制文件](http/post/binary.md)_
+        * [URL 编码](http/post/url-encode.md)_
         * [Convert to GET](http/post/convert-to-get.md)
         * [Expect 100-continue](http/post/expect100.md)
         * [Chunked encoded POSTs](http/post/chunked.md)
