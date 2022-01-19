@@ -22,7 +22,7 @@ This section describes the simple posts, for multipart formposts done with
 * [Expect 100-continue](post/expect100.md)
 * [分块编码的 POST](post/chunked.md)
 * [隐藏的表单域](post/hiddenfields.md)
-* [弄清楚浏览器发送的内容](post/browsersends.md)
+* [了解浏览器发送的内容](post/browsersends.md)
 * [JavaScript 和表单](post/javascript.md)
 
 参考资料：

@@ -140,8 +140,8 @@
         * [Expect 100-continue](http/post/expect100.md)_
         * [分块编码 POST](http/post/chunked.md)_
         * [隐藏表单字段](http/post/hiddenfields.md)_
-        * [Figure out what a browser sends](http/post/browsersends.md)
-        * [JavaScript and forms](http/post/javascript.md)
+        * [了解浏览器发送的内容](http/post/browsersends.md)_
+        * [JavaScript 和表单](http/post/javascript.md)_
     * [Multipart formposts](http/multipart.md)
     * [-d vs -F](http/postvspost.md)
     * [Redirects](http/redirects.md)
