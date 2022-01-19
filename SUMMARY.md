@@ -142,8 +142,8 @@
         * [隐藏表单字段](http/post/hiddenfields.md)_
         * [了解浏览器发送的内容](http/post/browsersends.md)_
         * [JavaScript 和表单](http/post/javascript.md)_
-    * [Multipart formposts](http/multipart.md)
-    * [-d vs -F](http/postvspost.md)
+    * [Multipart formposts(多部份表格)](http/multipart.md)_
+    * [-d vs -F](http/postvspost.md)_
     * [Redirects](http/redirects.md)
     * [修改 HTTP 请求](http/requests.md)_
         * [请求方法(Method)](http/modify/method.md)_
