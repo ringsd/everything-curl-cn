@@ -144,7 +144,7 @@
         * [JavaScript 和表单](http/post/javascript.md)_
     * [Multipart formposts(多部份表格)](http/multipart.md)_
     * [-d vs -F](http/postvspost.md)_
-    * [Redirects](http/redirects.md)
+    * [重定向](http/redirects.md)_!
     * [修改 HTTP 请求](http/requests.md)_
         * [请求方法(Method)](http/modify/method.md)_
         * [请求目标(Target)](http/modify/target.md)_
@@ -152,8 +152,8 @@
         * [自定义头(Header)](http/modify/headers.md)_
         * [来源(Referer)](http/modify/referer.md)_
         * [用户代理(User-agent)](http/modify/user-agent.md)_
-    * [HTTP PUT](http/put.md)
-    * [Cookies](http/cookies.md)
+    * [HTTP PUT](http/put.md)_
+    * [Cookies](http/cookies.md)_
     * [HTTP/2](http/http2.md)
     * [Alternative Services](http/altsvc.md)
     * [HTTP/3](http/http3.md)
