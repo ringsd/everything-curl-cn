@@ -14,7 +14,7 @@ content—the data—that the server delivers. A browser gets data and it
 activates different parsers depending on what kind of content it thinks it
 gets. For example, if the data is HTML it will parse it to display a web page
 and possibly download other sub resources such as images, JavaScript and CSS
-files. When curl downloads a HTML it will just get that single HTML resource,
+files. When curl downloads HTML it will just get that single HTML resource,
 even if it, when parsed by a browser, would trigger a whole busload of more
 downloads. If you want curl to download any sub-resources as well, you need to
 pass those URLs to curl and ask it to get those, just like any other URLs.
@@ -59,7 +59,7 @@ remote server from what data you try to send to it, but even more so it
 introduces another software's view on how the protocol works and what the
 right things to do are.
 
-Interfering intermediaries are often the cause of lots of head aches and
+Interfering intermediaries are often the cause of lots of headaches and
 mysteries down to downright malicious modifications of content.
 
 We strongly encourage you to use HTTPS or other means to verify that the

@@ -36,11 +36,20 @@ sub urlify {
 
     $section =~ tr/[A-Z]/[a-z]/;
 
-    # remove dashes amd slashes from like option names
+    # remove leading dashes amd dots
     $section =~ s/^[-\.]+//g;
 
-    # but replace spaces with dashes
-    $section =~ s/ +/-/g;
+    # convert some bytes to dashes
+    $section =~ s/[ \/\@]/-/g;
+
+    # remove rubbish
+    $section =~ s/[*`'":\(\),]+//g;
+
+    # < => less-than-
+    $section =~ s/^\</less-than-/g;
+    
+    # > => less-than-
+    $section =~ s/\>$/-greater-than/g;
 
     return "$fname#$section";
 }
@@ -103,7 +112,11 @@ sub sorting {
 }
 
 sub byname {
-    return sorting($a) cmp sorting($b);
+    my $c = sorting($a) cmp sorting($b);
+    if(!$c) {
+        $c = $a cmp $b;
+    }
+    return $c;
 }
 
 my %letter;

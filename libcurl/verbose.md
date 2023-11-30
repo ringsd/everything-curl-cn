@@ -1,4 +1,4 @@
-## Verbose operations
+# Verbose operations
 
 Okay, we just showed how to get the error as a human readable text as that is
 an excellent help to figure out what went wrong in a particular transfer and
@@ -19,7 +19,7 @@ it different things. You can redirect the output elsewhere by changing stderr
 with `CURLOPT_STDERR` or you can get even more info in a fancier way with the
 debug callback (explained further in a later section).
 
-### Trace everything
+## Trace everything
 
 Verbose is certainly fine, but sometimes you need more. libcurl also offers a
 trace callback that in addition to showing you all the stuff the verbose mode
@@ -37,15 +37,15 @@ that callback instead of its internal handling.
 
 The trace callback should match a prototype like this:
 
-    int my_trace(CURL *handle, curl_infotype type, char *ptr, size_t size,
-                 void *userp);
+    int my_trace(CURL *handle, curl_infotype type, char *data, size_t size,
+                 void *user);
 
 **handle** is the easy handle it concerns, **type** describes the particular
 data passed to the callback (data in/out, header in/out, TLS data in/out and
-"text"), **ptr** points to the data being **size** number of bytes. **userp**
-is the custom pointer you set with `CURLOPT_DEBUGDATA`.
+"text"), **data** is a pointer pointing to the data being **size** number of
+bytes. **user** is the custom pointer you set with `CURLOPT_DEBUGDATA`.
 
-The data pointed to by **ptr** *will not* be zero terminated, but will be
+The data pointed to by **data** *will not* be zero terminated, but will be
 exactly of the size as told by the **size** argument.
 
 The callback must return 0 or libcurl will consider it an error and abort the

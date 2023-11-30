@@ -1,4 +1,4 @@
-## Releases
+# Releases
 
 A release in the curl project means packaging up all the source code that is
 in the master branch of the code repository, signing the package, tagging the
@@ -21,9 +21,13 @@ weeks later and so it continues. Non-stop.
 For every release we tag the source code in the repository with "curl-release
 version" and we update the [changelog](https://curl.se/changes.html).
 
-We had done 204 curl releases by November 2021. The entire release history and
+We had done 210 curl releases by August 2022. The entire release history and
 changelog is available in our [curl release
 log](https://curl.se/docs/releases.html).
+
+## Release cycle
+
+![The curl release cycle visualized](release-cycle.png)
 
 ## Daily snapshots
 
@@ -37,10 +41,7 @@ provide daily snapshots.
 The daily snapshots are generated daily (clever naming, right?) as if a
 release had been made at that point. It produces a package of all sources code
 and all files that are normally part of a release and puts it in a package and
-uploads it to a special place
-([https://curl.se/snapshots/](https://curl.se/snapshots/)) to allow
-interested people to get the latest code to test, to experiment or
-whatever.
+uploads it to [this special place](https://curl.se/snapshots/) to allow
+interested people to get the latest code to test, to experiment or whatever.
 
-The snapshots are only kept for around 20 days until deleted.
-
+The snapshots are kept for around 20 days until deleted.

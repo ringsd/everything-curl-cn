@@ -1,4 +1,4 @@
-## HTTP ranges
+# HTTP ranges
 
 What if the client only wants the first 200 bytes out of a remote
 resource or perhaps 300 bytes somewhere in the middle? The HTTP protocol
@@ -14,7 +14,6 @@ However, a byte range is only a request to the server. It does not have to
 respect the request and in many cases, like when the server automatically
 generates the contents on the fly when it is being asked, it will simply refuse
 to do it and it then instead respond with the full contents anyway.
-<!--The above is a duplicate of http-ranges.md-->
 
 You can make libcurl ask for a range with `CURLOPT_RANGE`. Like if you want
 the first 200 bytes out of something:

@@ -1,6 +1,6 @@
 # Name resolve tricks
 
-curl offers many ways to make use another host than the one it normally would
+curl offers many ways to make it use another host than the one it normally would
 connect to.
 
 ## Edit the hosts file
@@ -59,7 +59,7 @@ verify the server's response to make sure it serves for the name in the URL.
 The pattern you specify in the option needs be a host name and its
 corresponding port number and only if that exact pair is used in the URL will
 the address be substituted. For example, if you want to replace a host name in
-a HTTPS URL on its default port number, you need to tell curl it is for port
+an HTTPS URL on its default port number, you need to tell curl it is for port
 443, like:
 
     curl --resolve example.com:443:192.168.0.1 https://example.com/
@@ -93,9 +93,9 @@ connect, but in all other ways still assume it is talking to
 ## Name resolve tricks with c-ares
 
 As should be detailed elsewhere in this book, curl may be built with several
-different name resolving back-ends. One of those back-ends is powered by the
+different name resolving backends. One of those backends is powered by the
 c-ares library and when curl is built to use c-ares, it gets a few extra
-superpowers that curl built to use other name resolve back-ends do not get.
+superpowers that curl built to use other name resolve backends do not get.
 Namely, it gains the ability to more specifically instruct what DNS servers to
 use and how that DNS traffic is using the network.
 

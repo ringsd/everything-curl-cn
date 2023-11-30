@@ -44,7 +44,7 @@ when you traverse the site with curl.
 ## Web logins and sessions
 
 The site at https://example.com/ features a login prompt. The login on the web
-site is a HTML form to which you send a [HTTP POST](post.md) to. Save the
+site is an HTML form to which you send a [HTTP POST](post.md) to. Save the
 response cookies and the response (HTML) output.
 
 Although the login page is visible (if you would use a browser) on
@@ -77,8 +77,8 @@ tag anyway, you could do something like this first:
 
     curl -c cookies https://example.com/ -o loginform
 
-You would often need a HTML parser or some scripting language to extract the id
-field from there and then you can proceed and login as mentioned above, but
+You would often need an HTML parser or some scripting language to extract the
+id field from there and then you can proceed and login as mentioned above, but
 with the added cookie loading (I am splitting the line into two lines to make
 it more readable):
 
@@ -126,3 +126,13 @@ then makes it:
 
     curl -d user=daniel -d secret=qwerty -d id=bc76 https://example.com/login.cgi \
     -b cookies -c cookies -L -e "https://example.com/" -o out
+
+## TLS fingerprinting
+
+Anti-bot detections nowadays use TLS fingerprinting to figure out whether a
+request is coming from a browser. Curl's fingerprint can vary depending on your
+environment and most likely is different from those of browsers. Curl's CLI
+does not have options to change all the various parts of the fingerprint,
+however an advanced user can customize the fingerprint through the use of
+libcurl and by compiling curl from source themselves.
+

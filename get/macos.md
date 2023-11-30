@@ -6,10 +6,22 @@ project, we recommend installing [homebrew](https://brew.sh/) (a macOS
 software package manager) and then install the curl package from them:
 
     brew install curl
+    
+Note that when installing curl, brew does not create a `curl` symlink
+in the default homebrew folder, to avoid clashes with the macOS version of curl.
 
-### Get libcurl for macOS
+Run the following to make brew curl the default one in your shell:
 
-A popular and easy way to get libcurl installed for macOS is to use
-[homebrew](https://brew.sh/ and then run this simple command in a terminal:
+    echo 'export PATH="$(brew --prefix)/opt/curl/bin:$PATH"' >> ~/.zshrc
+    source ~/.zshrc
 
-    brew install libcurl
+
+## Get libcurl for macOS
+
+When you install `curl` the tool with homebrew as described above, it also
+installs libcurl together with its associated headers.
+
+libcurl is also installed with macOS itself and always present, and if you
+install the development environment `XCode` from Apple, you can use libcurl
+directly without having to install anything extra as the curl include files
+are bundled there.

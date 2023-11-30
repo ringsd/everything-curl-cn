@@ -1,4 +1,4 @@
-## SCP and SFTP
+# SCP and SFTP
 
 curl supports the SCP and SFTP protocols if built with a prerequisite 3rd
 party library: [libssh2](https://www.libssh2.org/),
@@ -14,7 +14,7 @@ secure transfers when used correctly.
 The SCP protocol is generally considered to be the black sheep of the two
 since it is not portable and usually only works between Unix systems.
 
-### URLs
+## URLs
 
 SFTP and SCP URLs are similar to other URLs and you download files using these
 protocols the same as with others:
@@ -45,7 +45,7 @@ look similar to this:
 
     curl sftp://example.com/~/todo.txt -u daniel
 
-### Authentication
+## Authentication
 
 Authentication with curl against an SSH server (when you specify an SCP or
 SFTP URL) is done like this:
@@ -67,12 +67,12 @@ If curl cannot authenticate with the public key for any reason, it will
 instead attempt to use the user name + password if the server allows it and
 the credentials are passed on the command line.
 
-For example, the same user from above has the password 'RHvxC6wUA' on a remote
+For example, the same user from above has the password `RHvxC6wUA` on a remote
 system and can download a file via SCP like this:
 
     curl -u john:RHvxC6wUA -O scp://ssh.example.com/file.tar.gz
 
-### Known hosts
+## Known hosts
 
 A secure network client needs to make sure that the remote host is exactly the
 host that it thinks it is communicating with. With TLS based protocols, it is

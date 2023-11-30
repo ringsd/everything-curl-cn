@@ -1,25 +1,43 @@
-# 修改请求目标
+# Modify request target
 
-当输入 URL 时，例如 `http://example.com/file`， URL 的路径部分被提取出去，并在 HTTP 请求行中转换为 `/file`。
-该项在 HTTP 协议中被称为*请求目标*。也就是此请求将与之交互的资源。通常，这个请求目标是从 URL 中提取出来的，然后在请求中使用，作为一个用户，您不需要考虑它。
+When given an input URL such as `http://example.com/file`, the path section of
+the URL gets extracted and is turned into `/file` in the HTTP request line.
+That item in the protocol is called the *request target* in HTTP. That is the
+resource this request will interact with. Normally this request target is
+extracted from the URL and then used in the request and as a user you do not
+need to think about it.
 
-在某些罕见的情况下，用户可能希望发挥创造性，以 URL 不允许的方式更改此请求目标。
-例如，HTTP OPTIONS 方法有一个专门为此定义的请求目标，它使用 `*` 来实现这一点，这个时候 OPTIONS 请求将应用于服务器，而不是某个指定资源。是的，只有一个星号。无法为此指定 URL，因此，如果要将请求目标中的单个星号传递给服务器（如 OPTIONS 请求），则必须按如下方式执行：
+In some rare circumstances, user may want to go creative and change this
+request target in ways that the URL does not really allow. For example, the
+HTTP OPTIONS method has a specially define request target for magic that
+concerns *the server* and not a specific path, and it uses `*` for that. Yes,
+a single asterisk. There is no way to specify a URL for this, so if you want to
+pass a single asterisk in the request target to a server, like for OPTIONS,
+you have to do it like this:
 
     curl -X OPTIONS --request-target "*" http://example.com/
 
-该示例命令行使传出HTTP请求的第一行如下所示（/ 变为 *）：
+That example command line makes the first line of the outgoing HTTP request to
+look like this:
 
     OPTIONS * HTTP/1.1
 
 ## --path-as-is
 
-URL 的路径部分是以主机名后的第一个斜杠开始，以URL结尾或以'？'结尾的部分或者'#'（粗略地说）。
+The path part of the URL is the part that starts with the first slash after
+the host name and ends either at the end of the URL or at a '?' or '#'
+(roughly speaking).
 
-如果路径中的包括 `/../` 或 `/./` 这样的子串，curl 会在将路径发送到服务器之前处理它们，处理方式参考了本地文件系统针对路径的标准处理方式。`/../` 序列将删除，所以 `/hello/sir/../` 最终会变成 `/hello/`，`/./` 只需删除即可，因此 `/hello/./sir/` 将变成了 `/hello/sir/`。
+If you include substrings including `/../` or `/./` in the path, curl will
+automatically squash them before the path is sent to the server, as is
+dictated by standards and how such strings tend to work in local file
+systems. The `/../` sequence will remove the previous section so that
+`/hello/sir/../` ends up just `/hello/` and `/./` is simply removed so that
+`/hello/./sir/` becomes `/hello/sir/`.
 
-为了 *防止* curl 将路径发送到服务器之前将类似的子串处理掉，因此有了 `--path-as-is` 选项。
+To *prevent* curl from squashing those magic sequences before they are sent to
+the server and thus allow them through, the `--path-as-is` option exists.
 
-Lame 试图欺骗服务器传递其 `/etc/passwd` 文件：
+Lame attempt to trick the server to deliver its `/etc/passwd` file:
 
     curl --path-as-is https://example.com/../../etc/passwd

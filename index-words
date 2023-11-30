@@ -10,6 +10,7 @@
 --data-urlencode
 --etag-compare
 --etag-save
+--expand
 --fail
 --fail-with-body
 --ftp-method
@@ -24,6 +25,8 @@
 --http2
 --http2-prior-knowledge
 --http3
+--http3-only
+--json
 --keepalive-time
 --libcurl
 --limit-rate
@@ -35,10 +38,12 @@
 --negotiate
 --netrc-file
 --netrc-optional
+--no-clobber
 --no-eprt
 --no-epsv
 --ntlm
 --parallel
+--parallel-immediate
 --parallel-max
 --path-as-is
 --post301
@@ -49,7 +54,9 @@
 --proxy1.0
 --proxytunnel
 --quote
+--rate
 --remote-name-all
+--remove-on-error
 --resolve
 --retry
 --retry-all-errors
@@ -71,6 +78,8 @@
 --trace
 --trace-ascii
 --trace-time
+--url-query
+--variable
 --verbose
 --version
 --write-out
@@ -121,6 +130,9 @@ curl-users
 curl_easy_cleanup
 curl_easy_getinfo
 curl_easy_init
+curl_easy_option_by_id
+curl_easy_option_by_next
+curl_easy_option_by_next
 curl_easy_perform
 curl_easy_reset
 curl_easy_setopt
@@ -153,13 +165,18 @@ curl_url_get
 curl_url_set
 curl_version_info
 CURLE_ABORTED_BY_CALLBACK
+CURLHSTS_ENABLE
+CURLHSTS_READONLYFILE
 CURLINFO_CERTINFO
 CURLINFO_CONTENT_TYPE
 CURLINFO_EFFECTIVE_URL
 CURLINFO_FILETIME
 CURLINFO_TOTAL_TIME_T
+CURLMOPT_PIPELINING
 CURLMOPT_SOCKETFUNCTION
 CURLMOPT_TIMERFUNCTION
+CURLOPT_ALTSVC
+CURLOPT_ALTSVC_CTRL
 CURLOPT_CLOSESOCKETFUNCTION
 CURLOPT_COOKIE
 CURLOPT_COOKIEFILE
@@ -180,6 +197,8 @@ CURLOPT_FAILONERROR
 CURLOPT_HEADER
 CURLOPT_HEADERDATA
 CURLOPT_HEADERFUNCTION
+CURLOPT_HSTS
+CURLOPT_HSTS_CTRL
 CURLOPT_HTTPGET
 CURLOPT_HTTPHEADER
 CURLOPT_HTTPPOST
@@ -191,6 +210,7 @@ CURLOPT_NOBODY
 CURLOPT_NOPROGRESS
 CURLOPT_OPENSOCKETDATA
 CURLOPT_OPENSOCKETFUNCTION
+CURLOPT_PIPEWAIT
 CURLOPT_POST
 CURLOPT_POSTFIELDS
 CURLOPT_POSTFIELDSIZE
@@ -276,7 +296,6 @@ librtmp
 libssh
 libssh2
 license
-MesaLink
 MIT
 MITM-proxies
 MQTT
@@ -286,7 +305,6 @@ name resolving
 nghttp2
 nix
 NPN
-NSS
 openldap
 OpenSSL
 PAC
@@ -352,8 +370,10 @@ TLS
 TLS backend
 TODO
 transfer-encoding
+trurl
 Ubuntu
 URL Globbing
+variables
 Vulnerability
 Wireshark
 wolfssh

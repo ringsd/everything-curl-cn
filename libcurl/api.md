@@ -1,4 +1,4 @@
-## API compatibility
+# API compatibility
 
 libcurl promises API stability and guarantees that your program written today
 will remain working in the future. We do not break compatibility.
@@ -9,7 +9,7 @@ do not change behavior in a non-compatible way or remove functions.
 The last time we changed the API in an non-compatible way was for 7.16.0 in
 2006 and we plan to never do it again.
 
-### Version numbers
+## Version numbers
 
 Curl and libcurl are individually versioned, but they mostly follow each other
 rather closely.
@@ -22,7 +22,7 @@ The version numbering is always built up using the same system:
  - Y is release number
  - Z is patch number
 
-### Bumping numbers
+## Bumping numbers
 
 One of these X.Y.Z numbers will get bumped in every new release. The numbers to
 the right of a bumped number will be reset to zero.
@@ -45,7 +45,7 @@ All original curl source release archives are named according to the libcurl
 version (not according to the curl client version that, as said before, might
 differ).
 
-### Which libcurl version
+## Which libcurl version
 
 As a service to any application that might want to support new libcurl
 features while still being able to build with older versions, all releases
@@ -55,7 +55,7 @@ defined as:
 
     #define LIBCURL_VERSION_NUM 0xXXYYZZ
 
-Where XX, YY and ZZ are the main version, release and patch numbers in
+Where `XX` , `YY` and `ZZ` are the main version, release and patch numbers in
 hexadecimal. All three number fields are always represented using two digits
 (eight bits each). 1.2.0 would appear as "0x010200" while version 9.11.7
 appears as "0x090b07".
@@ -68,9 +68,9 @@ This number is also available as three separate defines:
 
 These defines are, of course, only suitable to figure out the version number
 built *just now* and they will not help you figuring out which libcurl version
-that is used at run-time three years from now.
+that is used at runtime three years from now.
 
-### Which libcurl version runs
+## Which libcurl version runs
 
 To figure out which libcurl version that your application is using *right
 now*, `curl_version_info()` is there for you.
@@ -89,7 +89,7 @@ it can return.
 
 You call the function like this:
 
-   curl_version_info_data *ver = curl_version_info( CURLVERSION_NOW );
+    curl_version_info_data *version = curl_version_info( CURLVERSION_NOW );
 
 The data will then be pointing at struct that has or at least can have the
 following layout:

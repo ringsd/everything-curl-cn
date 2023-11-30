@@ -1,4 +1,4 @@
-## Contributing
+# Contributing
 
 Contributing means helping out.
 
@@ -21,7 +21,7 @@ sorts of contributions are suitable received.
 Send your contributions on a [mailing list](../project/comm.md), file an issue
 or submit a pull request.
 
-### Suggestions
+## Suggestions
 
 Ideas are easy, implementations are hard. Yes, we do appreciate good ideas and
 suggestions of what to do and how to do it, but the chances that the ideas
@@ -32,7 +32,7 @@ We already gather ideas in the `TODO` document and we are generally aware of
 the current trends in the popular networking protocols so there is usually no
 need to remind us about those.
 
-### What to add
+## What to add
 
 The best approach to add anything to curl or libcurl is, of course, to first
 bring the idea and suggestion to the curl project team members and then
@@ -40,7 +40,7 @@ discuss with them if the idea is feasible for inclusion and then how an
 implementation is best done—and done in the best possible way to get merged
 into the source code repository, assuming that is what you want.
 
-The project generally approves of functions that improves the support for the
+The project generally approves functions that improve the support for the
 current protocols, especially features that popular clients or browsers have
 but that curl still lacks.
 
@@ -51,7 +51,7 @@ equally to that.
 If you are fixing a problem you have or a problem that others are reporting, we
 will be thrilled to receive your fix and merge it as soon as possible,
 
-### What not to add
+## What not to add
 
 There are no good rules that say what features you can or cannot add or that
 we will never accept, but let me instead try to mention a few things you
@@ -98,7 +98,7 @@ To check out the curl source code from git, you can clone it like this:
 
     git clone https://github.com/curl/curl.git
 
-### Pull request
+## Pull request
 
 A popular and convenient way to make your own changes and contribute them back
 to the project is by doing a so-called pull request on GitHub.
@@ -117,11 +117,12 @@ branch and not in master, just to make it easier for you to update a pull
 request, like after review, for example, or if you realize it was a dead end and
 you decide to just throw it away.
 
-### Make a patch for the mailing list
+## Make a patch for the mailing list
 
 Even if you opt to not make a pull request but prefer the old fashioned and
 trusted method of sending a patch to the curl-library mailing list, it is
-still a good to work in a local git branch and commit your changes there.
+still a good practice to work in a local git branch and commit your changes
+there.
 
 A branch makes it easy to edit and rebase when you need to change things and
 it makes it easy to keep syncing to the master branch when things are updated
@@ -131,7 +132,7 @@ Once your commits are fine enough to get sent to the mailing list, you just
 create patches with `git format-patch` and send them away. Even more fancy
 users go directly to `git send-email` and have git send the email itself.
 
-### git commit style
+## git commit style
 
 When you commit a patch to git, you give it a commit message that describes
 the change you are committing. We have a certain style in the project that we
@@ -163,7 +164,7 @@ proper credit in the project. We do not want to take someone else's work
 without clearly attributing where it comes from. Giving correct credit is of
 utmost importance.
 
-### Who decides what goes in?
+## Who decides what goes in?
 
 First, it might not be obvious to everyone but there is, of course, only a
 limited set of people that can actually merge commits into the actual official

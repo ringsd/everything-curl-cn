@@ -56,7 +56,7 @@ You implement the callback in a manner similar to:
     mem_cb(void *contents, size_t size, size_t nmemb, void *userp)
     {
       size_t realsize = size * nmemb;
-      struct repsonse *mem = (struct response *)userp;
+      struct response *mem = (struct response *)userp;
 
       char *ptr = realloc(mem->memory, mem->size + realsize + 1);
       if(!ptr) {
@@ -75,12 +75,14 @@ You implement the callback in a manner similar to:
 
     int main()
     {
-      struct response chunk;
+      struct response chunk = {.memory = malloc(0),
+                               .size = 0};
 
       /* send all data to this function  */
       curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, mem_cb);
 
       /* we pass our 'chunk' to the callback function */
       curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *)&chunk);
-
+    
+      free(chunk.memory);
     }

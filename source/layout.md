@@ -1,10 +1,10 @@
-## Code layout
+# Code layout
 
 The curl source code tree is neither large nor complicated. A key thing to
 remember is, that libcurl is the library and that this library is the biggest
 component of the curl command-line tool.
 
-### root
+## root
 
 We try to keep the number of files in the source tree root to a minimum. You
 will see a slight difference in files if you check a release archive compared
@@ -13,7 +13,7 @@ release scripts.
 
 Some of the more notable ones include:
 
-- `buildconf`: used to build configure and more when
+- `buildconf`: (deprecated) script used to build configure and more when
   building curl from source out of the git repository.
 - `buildconf.bat`: the Windows version of buildconf. Run this after having
   checked out the full source code from git.
@@ -30,7 +30,7 @@ Some of the more notable ones include:
   found in git it contains the changes done since the previous release that
   are destined to end up in the coming release.
 
-### lib
+## lib
 
 This directory contains the full source code for libcurl. It is the same
 source code for all platforms—over one hundred C source files and a few more
@@ -41,36 +41,31 @@ Depending on what features are enabled in your own build and what
 functions your platform provides, some of the source files or portions of the
 source files may contain code that is not used in your particular build.
 
-### lib/vtls
+## lib/vtls
 
-The VTLS sub section within libcurl is the home of all the TLS back-ends
-libcurl can be built to support. The "virtual" TLS internal API is a common
-API that is used within libcurl to access TLS and crypto functions without the
-main code knowing exactly which TLS library is used. This allows the
-person who builds libcurl to select from a wide variety TLS libraries to build
-with.
+The VTLS sub section within libcurl is the home of all the TLS backends
+libcurl can be built to support. The "virtual" TLS internal API is a backend
+agnostic API used internally to access TLS and crypto functions without the
+main code knowing which specific TLS library is used. This allows the person
+who builds libcurl to select from a wide variety TLS libraries to build with.
 
 We also maintain a [SSL comparison
 table](https://curl.se/docs/ssl-compared.html) on the website to aid
 users.
 
-- OpenSSL: the (by far) most popular TLS library.
-- BoringSSL: an OpenSSL fork maintained by Google. It will make libcurl disable a
-  few features due to lacking some functionality in the library.
-- LibreSSL: an OpenSSL fork maintained by the OpenBSD team.
-- NSS: a full-blown TLS library perhaps most known for being used by the
-  Firefox web browser. This was the default TLS back-end for curl on Fedora and
-  Redhat systems for a while in the past.
-- GnuTLS: a full-blown TLS library used by default by the Debian packaged curl.
-- mbedTLS: a TLS library targeted towards the embedded market.
-- wolfSSL: a TLS library targeted towards the embedded market.
-- MesaLink: a TLS library written in rust
-- Schannel: the native TLS library on Windows.
-- SecureTransport: the native TLS library on Mac OS X.
-- GSKit: the native TLS library on OS/400.
+- AmiSSL: an OpenSSL fork made for AmigaOS (uses `openssl.c`)
+- BearSSL
+- BoringSSL: an OpenSSL fork maintained by Google. (uses `openssl.c`)
+- GnuTLS
+- LibreSSL: an OpenSSL fork maintained by the OpenBSD team. (uses `openssl.c`)
+- mbedTLS
+- OpenSSL
 - rustls: a TLS library written in rust
+- Schannel: the native TLS library on Windows.
+- Secure Transport: the native TLS library on macOS
+- wolfSSL
 
-### src
+## src
 
 This directory holds the source code for the curl command-line tool. It is the
 same source code for all platforms that run the tool.
@@ -82,7 +77,7 @@ user's wishes.
 
 This code uses libcurl just as any other application would.
 
-### include/curl
+## include/curl
 
 Here are the public header files that are provided for libcurl-using
 applications. Some of them are generated at configure or release time so they
@@ -91,11 +86,11 @@ do not look identical in the git repository as they do in a release archive.
 With modern libcurl, all an application is expected to include in its C source code
 is `#include <curl/curl.h>`
 
-### docs
+## docs
 
 The main documentation location. Text files in this directory are typically
 plain text files. We have slowly started to move towards Markdown format so a
-few (but growing number of) files use the .md extension to signify that.
+few (but growing number of) files use the `.md` extension to signify that.
 
 Most of these documents are also shown on the curl website automatically
 converted from text to a web friendly format/look.
@@ -137,7 +132,7 @@ converted from text to a web friendly format/look.
 - `TODO`: things we or you can work on implementing
 - `VERSIONS`: how the version numbering of libcurl works
 
-### docs/libcurl
+## docs/libcurl
 
 All libcurl functions have their own man pages in individual files with .3
 extensions, using nroff format, in this directory. There are also a few other
@@ -155,7 +150,7 @@ files that are described below.
 - `libcurl-tutorial.3`
 - `symbols-in-versions`
 
-### docs/libcurl/opts
+## docs/libcurl/opts
 
 This directory contains the man pages for the individual options for three
 different libcurl functions.
@@ -164,14 +159,14 @@ different libcurl functions.
 `curl_multi_setopt()` options start with `CURLMOPT_` and
 `curl_easy_getinfo()` options start with `CURLINFO_`.
 
-### docs/examples
+## docs/examples
 
 Contains around 100 stand-alone examples that are meant to help readers
 understand how libcurl can be used.
 
 See also the [libcurl examples](../libcurl/examples.md) section of this book.
 
-### scripts
+## scripts
 
 Handy scripts.
 

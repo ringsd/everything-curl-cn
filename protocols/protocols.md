@@ -1,4 +1,4 @@
-## Protocol
+# Protocol
 
 The language used to ask for data to get sent—in either direction—is
 called **the protocol**. The protocol describes exactly how to ask the server
@@ -20,7 +20,8 @@ transfer.
 The latest curl (as of this writing) supports these protocols:
 
 DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS,
-MQTT, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET, TFTP
+MQTT, POP3, POP3S, RTMP, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET, TFTP,
+WS, WSS
 
 To complicate matters further, the protocols often exist in different versions
 or flavors as well.
@@ -101,7 +102,7 @@ learn anything else. If popular alternative implementations act differently
 than what we think the spec says and that alternative behavior is what works
 widely on the big Internet, then chances are we will change foot and instead
 decide to act like those others. If a server refuses to talk with us when we
-think we follow the spec but works fine when we bend the rules every so
+think we follow the spec but works fine when we bend the rules ever so
 slightly, then we probably end up bending them exactly that way—if we can
 still work successfully with other implementations.
 
