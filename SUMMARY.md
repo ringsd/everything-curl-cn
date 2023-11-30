@@ -154,12 +154,12 @@
         * [用户代理(User-agent)](http/modify/user-agent.md)_
     * [HTTP PUT](http/put.md)_
     * [Cookies](http/cookies.md)_
-    * [HTTP/2](http/http2.md)
-    * [Alternative Services](http/altsvc.md)
-    * [HTTP/3](http/http3.md)
-    * [HSTS](http/hsts.md)
-    * [HTTP cheat sheet](http/cheatsheet.md)
-    * [Scripting browser-like tasks](http/browserlike.md)
+    * [HTTP/2](http/http2.md)_
+    * [替代服务](http/altsvc.md)_
+    * [HTTP/3](http/http3.md)_
+    * [HSTS](http/hsts.md)_
+    * [HTTP 备忘表](http/cheatsheet.md)_
+    * [类似浏览器的任务脚本](http/browserlike.md)
 * [FTP with curl](ftp.md)
     * [FTP Directory listing](ftp/dirlist.md)
     * [Uploading with FTP](ftp/upload.md)

@@ -1,45 +1,70 @@
 # Scripting browser-like tasks
 
+# 编写类似浏览器的任务脚本
+
 curl can do almost every HTTP operation and transfer your favorite browser
 can. It can actually do a lot more than so as well, but in this chapter we
 will focus on the fact that you can use curl to reproduce, or script, what you
 would otherwise have to do manually with a browser.
 
+curl 几乎可以像你喜欢的浏览器那样执行所有的 HTTP 操作。实际上，它还可以做更多的事情，但在本章中，我们将重点介绍这样一个操作：你可以使用curl 来复制或编写脚本，否则你必须使用浏览器手动执行这些操作。
+
 Here are some tricks and advice on how to proceed when doing this.
 
+下面是一些技巧和建议，告诉你如何进行这项工作。
+
 ## Figure out what the browser does
+
+## 了解浏览器的功能
 
 This is really a necessary first step. Second-guessing what it does risks having
 you chase down the wrong problem rat-hole. The scientific approach to this
 problem pretty much requires that you first understand what the browser does.
+
+这确实是必要的第一步。第二次猜测它的作用可能会让你陷入错误的问题老鼠洞。解决这个问题的科学方法基本上需要首先了解浏览器的功能。
 
 To learn what the browser does to perform a certain task, you can either read
 the HTML pages that you operate on and with a deep enough knowledge you can
 see what a browser would do to accomplish it and then start trying to do the
 same with curl.
 
+要了解浏览器执行某项任务的功能，你可以阅读所操作的 HTML 页面，并充分了解浏览器将如何完成该任务，然后开始尝试使用 curl 执行同样的操作。
+
 The slightly more effective way, that also works even for the cases when the
 page is shock-full of obfuscated JavaScript, is to run the browser and monitor
 what HTTP operations it performs.
 
+更有效的方法是运行浏览器并监视它执行的 HTTP 操作，即使在页面充满模糊 JavaScript 的情况下，这种方法也适用。
+
 The [Copy as curl](../usingcurl/copyas.md) section describes how you can
 record a browser's request and easily convert that to a curl command line.
+
+[Copy as curl](../usingcurl/copyas.md) 部分描述了如何记录浏览器的请求，并轻松地将其转换为 curl 命令行。
 
 Those copied curl command lines are often not good enough though since they
 tend to copy *exactly* that request, while you probably want to be a bad bit
 more dynamic so that you can reproduce the same operation and not just resend
 the verbatim request.
 
+这些复制的 curl 命令行通常不够好，因为它们往往会*完全*复制该请求，而你可能希望更灵活一点，以便可以复制相同的操作，而不仅仅是重新逐字发送请求。
+
 ## Cookies
+
+## Cookies+
 
 A lot of the web today works with a user name and password login prompt
 somewhere. In many cases you even logged in a while ago with your browser but
 it has kept the state and keeps you logged in.
 
+如今，很多网站都在某处使用用户名和密码登录提示。在许多情况下，你在不久前用浏览器登录，浏览器会保持了你的登录状态。
+
 The logged-in state is almost always done by using [cookies](cookies.md).
 A common operation would be to first login and save the returned cookies in a
 file, and then let the site update the cookies in the subsequent command lines
 when you traverse the site with curl.
+
+登录状态几乎都是通过使用 [cookies](cookies.md) 完成的。
+一个常见的操作是首先登录并将返回的 cookie 保存在一个文件中，然后在使用 curl 访问站点时，让站点在随后的命令行中更新 cookie。 
 
 ## Web logins and sessions
 
